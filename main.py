@@ -23,7 +23,7 @@ class CustomRewardWrapper(Wrapper):
 # -------------------------- 训练阶段（不渲染） --------------------------
 # 创建训练环境（关闭渲染）
 train_env = gym.make("CartPole-v1")
-# train_env = CustomRewardWrapper(train_env)  # 自定义奖励
+train_env = CustomRewardWrapper(train_env)  # 自定义奖励
 train_env = Monitor(train_env)  # 监控训练数据
 
 # 初始化PPO模型
