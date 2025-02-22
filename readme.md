@@ -20,14 +20,17 @@
 *用pip工具安装以上环境。由于几个代码库之间有共同的基础代码库依赖（例如numpy、matplotlib等），假如先下载mujoco，pip会自动下载依赖的基础库，而这个版本可能又不在gymnasium依赖的版本范围之内，这时就要重装特定的基础库，比较麻烦。因此建议按照以下的步骤去执行，我在过程中就没有遇到这类问题。*
 
 **Vscode安装**
+
 官网下载安装，可以自定义安装路径。
 
 **Python安装**
+
 1. 新建python文件夹，以后安装的各版本python都在这里
-2. 建立子文件夹py39，从官网(https://www.python.org/downloads/release/python-3913/)下载安装包(Windows installer (64-bit))到该文件夹
+2. 建立子文件夹py39，从官网(https://www.python.org/downloads/release/python-3913/) 下载安装包(Windows installer (64-bit))到该文件夹
 3. 双击该文件(python-3.9.13-amd64.exe)开始安装。自定义安装路径也到py39文件夹。
 
 **创建python虚拟环境**
+
 *对于每个项目，建议分别创建虚拟环境（以python3.9.13为基础，一系列代码库的集合）来简化管理。*
 1. 新建文件夹environment(在python文件夹外)，在VScdoe中打开该文件夹。
 2. `Ctrl+P`打开Vscode快捷指令栏，输入`>`，`python select interpreter`,找到并选中刚刚下载的`python3.9.13`。
@@ -39,6 +42,7 @@
     * 执行`Set-ExecutionPolicy RemoteSigned`，修改执行策略即可无报错执行第4步；
 
 **下载stable_baselines3**
+
 *下载中，如果遇到网络慢的问题，均在pip命令最后加入`-i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple`即可从清华镜像网站下载。*
 1. 先升级pip工具`pip install --upgrade pip`
 2. 如果第1步发现没有pip工具，解决办法如下：
@@ -52,6 +56,7 @@
 5. 用`pip list`可以查看已安装的库
 
 **下载gymnasium**
+
 1. gymnasium包含了很多设置好的环境和任务（benchmark），可以选择性地安装，这里安装基础的classic control与mujoco。
 2. 执行`pip install gymnasium[mujoco]`，会自动安装gymnasium和匹配的mujoco
 
